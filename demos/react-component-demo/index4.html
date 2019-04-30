@@ -18,8 +18,12 @@
     }
 
     handleClick() {
+        var d = new Date();
+        var currentDate = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
+        var newText = 'World' == this.state.text ? currentDate : 'World';
+
       this.setState({
-        text: 'Clicked'
+        text: newText
       });
     }
 

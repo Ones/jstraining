@@ -10,6 +10,7 @@
   </head>
   <body>
     <div id="example" style="width: 1000px;height: 800px;"></div>
+    <div id="gui"></div>
     <script type="text/babel">
 const {LineChart, Line, XAxis, YAxis, CartesianGrid} = Recharts;
 const data = [
@@ -41,6 +42,14 @@ ReactDOM.render(
   document.getElementById('example')
 );
 
+const person = {
+  name: "michel",
+  age: 31
+}
+
+const App = ({ person }) => <h1>{ person.name }</h1>
+
+ReactDOM.render(<App person={person} />, document.getElementById('gui'));
     </script>
   </body>
 </html>

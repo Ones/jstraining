@@ -3,7 +3,7 @@ var nightmare = Nightmare({ show: true });
 
 nightmare
   .goto('https://www.taobao.com/')
-  .type('#q', '电视机')
+  .type('#q', 'Jeep')
   .click('form[action*="/search"] [type=submit]')
   .wait(3000)
   .exists('#spulist-grid')

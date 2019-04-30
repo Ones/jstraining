@@ -34,5 +34,18 @@ describe('test index.html', function() {
       })
   });
 
+  it('h1 font color is red.', function(done) {
+    var nightmare = Nightmare({show: true});
+    nightmare.goto('http://127.0.0.1:8080/index.html')
+      .evaluate(function() {
+            return window.getComputedStyle(document.querySelector('h1')).getPropertyValue('color');
+      })
+        .end()
+        .then(function(text) {
+            expect(text).to.equal('rgb(255, 0, 0)');
+            done();
+        })
+  });
+
 });
 
